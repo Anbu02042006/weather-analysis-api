@@ -20,20 +20,13 @@ public class CsvReaderUtil {
         List<WeatherData> weatherData = new ArrayList<>();
 
         try {
-
-            // Load CSV from resources folder
             ClassPathResource resource = new ClassPathResource(filePath);
 
             BufferedReader br =
                     new BufferedReader(
                             new InputStreamReader(resource.getInputStream()));
-
             String line;
-
-            // Skip header row
             br.readLine();
-
-            // CSV date format
             DateTimeFormatter formatter =
                     DateTimeFormatter.ofPattern("yyyyMMdd-HH:mm");
 
