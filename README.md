@@ -180,7 +180,7 @@ Application URL:
 📍 Coimbatore, India<br><br>
 
 GitHub:
-<a href="https://github.com/anbu242006" target="_blank">
+<a href="https://github.com/anbu02042006" target="_blank">
 https://github.com/anbu242006
 </a>
 <br><br>
