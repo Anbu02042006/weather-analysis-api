@@ -1,46 +1,55 @@
-🌦 Weather Analysis API
-Java Developer Internship Assessment Project
-📌 Project Overview
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-The Weather Analysis API is a Spring Boot backend application developed as part of a Java Developer Internship Assessment.
+<body>
 
-This project processes nearly 20 years of weather forecast data for Delhi from a CSV dataset, stores it in a database, and exposes REST APIs to retrieve, filter, sort, and analyze weather information.
+<header>
+    <h1>🌦 Weather Analysis API</h1>
+    <p>Java Developer Internship Assessment Project</p>
+</header>
 
-The application demonstrates strong backend development concepts including:
+<div class="container">
 
-CSV Data Processing
+<div class="card">
+<h2>📌 Project Overview</h2>
+<p>
+Weather Analysis API is a Spring Boot backend application that processes
+20 years of Delhi weather data from CSV files, stores it in a database,
+and exposes REST APIs for filtering, sorting, and analytics.
+</p>
 
-REST API Development
+<ul>
+<li>CSV Data Processing</li>
+<li>REST API Development</li>
+<li>Database Integration</li>
+<li>Weather Analytics</li>
+<li>Layered Architecture</li>
+</ul>
+</div>
 
-Database Integration
+<div class="card">
+<h2>🧱 Tech Stack</h2>
 
-Filtering & Sorting
+<table>
+<tr><th>Technology</th><th>Purpose</th></tr>
+<tr><td>Java 21</td><td>Programming Language</td></tr>
+<tr><td>Spring Boot</td><td>Backend Framework</td></tr>
+<tr><td>Spring Data JPA</td><td>ORM</td></tr>
+<tr><td>H2 Database</td><td>In-memory Database</td></tr>
+<tr><td>Maven</td><td>Build Tool</td></tr>
+<tr><td>Postman</td><td>API Testing</td></tr>
+</table>
 
-Data Analytics
+</div>
 
-Modular Spring Boot Architecture
+<div class="card">
+<h2>🏗 Architecture</h2>
 
-🎯 Assessment Requirements Covered
-Requirement	Status
-Process CSV File	✅ Implemented
-Store Data into Database	✅ Spring Data JPA
-Create REST APIs	✅ Controller Layer
-Filtering Functionality	✅ Date & Month APIs
-Sorting Functionality	✅ Dynamic Sorting
-Modular Code Structure	✅ Layered Architecture
-🧱 Tech Stack
-Technology	Purpose
-Java 21	Programming Language
-Spring Boot	Backend Framework
-Spring Data JPA	ORM
-H2 Database	In-memory Database
-Maven	Build Tool
-REST APIs	Data Access
-Postman	API Testing
-🏗 Project Architecture
-
-The application follows Layered Architecture:
-
+<pre>
 Client (Postman)
         ↓
 Controller Layer
@@ -49,233 +58,90 @@ Service Layer
         ↓
 Repository Layer
         ↓
-Database (H2)
-📁 Project Structure
-com.weather_analysis.api
-│
-├── controller
-│      WeatherController.java
-│
-├── service
-│      WeatherService.java
-│
-├── service.impl
-│      WeatherServiceImpl.java
-│
-├── repository
-│      WeatherRepository.java
-│
-├── entity
-│      WeatherData.java
-│
-├── dto
-│      TemperatureStatsDTO.java
-│
-├── util
-│      CsvReaderUtil.java
-│
-└── WeatherAnalysisApiApplication.java
-📂 Dataset Information
+H2 Database
+</pre>
 
-Dataset contains historical weather data including:
+</div>
 
-Date
+<div class="card">
+<h2>🔌 API Endpoints</h2>
 
-Weather Condition
+<div class="endpoint">POST /weather/load</div>
+Loads CSV data into database.
 
-Temperature
+<div class="endpoint">GET /weather/all</div>
+Returns all weather records.
 
-Humidity
+<div class="endpoint">GET /weather/date?date=1996-11-01</div>
+Filter weather by date.
 
-Pressure
+<div class="endpoint">GET /weather/month?year=1996&month=11</div>
+Filter weather by month.
 
-Heat Index
+<div class="endpoint">GET /weather/stats?year=1996&month=11</div>
+Monthly temperature statistics.
 
-CSV File Location:
+<div class="endpoint">GET /weather/sort?field=temperature</div>
+Dynamic sorting support.
 
-src/main/resources/testset.csv
-⚙️ Data Processing Workflow
+</div>
 
-CSV file is read using BufferedReader.
+<div class="card">
+<h2>⚙ Database</h2>
 
-Each row is converted into a WeatherData entity.
+<p><b>H2 Console:</b></p>
 
-Date is parsed using DateTimeFormatter.
-
-Empty numeric values are safely handled.
-
-Data is stored using:
-
-weatherRepository.saveAll(data);
-🗄 Database Configuration
-
-This project uses H2 In-Memory Database.
-
-Access H2 Console
+<pre>
 http://localhost:8096/h2-console
-Credentials
+
 JDBC URL : jdbc:h2:mem:weatherdb
 Username : sa
-Password : (leave empty)
-🚀 How to Run the Project
-1️⃣ Clone Repository
-git clone https://github.com/YOUR_USERNAME/weather-analysis-api.git
-2️⃣ Open Project
+Password : (empty)
+</pre>
 
-Open using:
+</div>
 
-Spring Tool Suite (STS)
+<div class="card">
+<h2>🚀 How to Run</h2>
 
-IntelliJ IDEA
-
-Eclipse
-
-3️⃣ Run Application
-
-Run:
-
-WeatherAnalysisApiApplication.java
+<pre>
+git clone https://github.com/anbu02042006/weather-analysis-api.git
+cd weather-analysis-api
+mvn spring-boot:run
+</pre>
 
 Application runs at:
 
-http://localhost:8096
-🔌 API Endpoints
-✅ Load CSV Data
+<pre>http://localhost:8096</pre>
 
-Loads CSV data into database.
+</div>
 
-POST /weather/load
+<div class="card">
+<h2>👨‍💻 Author</h2>
 
-Response:
+<p>
+<b>Anbumani S</b><br>
+📍 Coimbatore, India<br><br>
 
-Weather Data Loaded Successfully
-✅ Get All Weather Data
-GET /weather/all
+GitHub:
+<a href="https://github.com/anbu02042006" target="_blank">
+https://github.com/anbu242006
+</a>
+<br><br>
 
-Returns all weather records.
+LinkedIn:
+<a href="https://www.linkedin.com/in/anbu02042006/" target="_blank">
+https://www.linkedin.com/in/anbu242006/
+</a>
+</p>
 
-✅ Filter By Date
-GET /weather/date?date=1996-11-01
+</div>
 
-Returns weather details for a specific date.
+</div>
 
-✅ Filter By Month
-GET /weather/month?year=1996&month=11
+<footer>
+⭐ Weather Analysis API — Internship Assessment Project
+</footer>
 
-Returns weather data for selected month.
-
-✅ Monthly Temperature Statistics
-
-Calculates:
-
-Highest temperature
-
-Median temperature
-
-Minimum temperature
-
-GET /weather/stats?year=1996&month=11
-
-Example Response:
-
-{
-  "high": 32.5,
-  "median": 24.3,
-  "minimum": 10.2
-}
-✅ Sort Weather Data
-
-Dynamic sorting supported using Spring Data JPA.
-
-GET /weather/sort?field=temperature
-
-Supported fields:
-
-date
-
-temperature
-
-humidity
-
-pressure
-
-heatIndex
-
-🧠 Key Implementation Concepts
-CSV Processing
-
-Uses ClassPathResource
-
-Reads line-by-line
-
-Converts rows into objects
-
-Filtering
-
-Implemented using repository methods:
-
-findByDate()
-findByDateBetween()
-Sorting
-
-Dynamic sorting using:
-
-Sort.by(field)
-Statistics Calculation
-
-Median calculated manually after sorting temperature list.
-
-🧪 API Testing
-
-All APIs tested using Postman.
-
-Recommended Testing Order
-
-/weather/load
-
-/weather/all
-
-/weather/date
-
-/weather/month
-
-/weather/sort
-
-/weather/stats
-
-📈 Future Enhancements
-
-Pagination support
-
-Swagger API Documentation
-
-MySQL Integration
-
-Global Exception Handling
-
-Docker Deployment
-
-Authentication & Authorization
-
-👨‍💻 Author
-
-Anbumani S
-
-📍 Coimbatore, India
-
-🔗 LinkedIn: https://www.linkedin.com/in/anbu242006/
-
-💻 GitHub: https://github.com/Anbu02042006
-
-✅ Evaluation Checklist
-Feature	Status
-CSV Processing	✅
-Database Storage	✅
-REST APIs	✅
-Filtering	✅
-Sorting	✅
-Statistics Calculation	✅
-Documentation	✅
-⭐ Conclusion
-
-This project demonstrates backend development skills using Spring Boot, including real-world data processing, API design, database integration, filtering, sorting, and analytical computations aligned with industry standards.
+</body>
+</html>
