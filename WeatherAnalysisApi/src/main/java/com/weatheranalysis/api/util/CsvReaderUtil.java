@@ -33,19 +33,18 @@ public class CsvReaderUtil {
             while ((line = br.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
                 String[] data = line.split(",");
-                if (data.length < 6) continue;
                 WeatherData wd = new WeatherData();
                 LocalDateTime dateTime =LocalDateTime.parse(data[0].trim(), formatter);
                 wd.setDate(dateTime.toLocalDate());
                 wd.setWeatherCondition(data[1].trim());
-                wd.setTemperature(parseDoubleSafe(data[2]));
-                wd.setHumidity(parseDoubleSafe(data[3]));
-                wd.setPressure(parseDoubleSafe(data[4]));
+                wd.setTemperature(parseDoubleSafe(data[11]));
+                wd.setHumidity(parseDoubleSafe(data[6]));
+                wd.setPressure(parseDoubleSafe(data[8]));
                 wd.setHeatIndex(parseDoubleSafe(data[5]));
                 weatherData.add(wd);
             }
             br.close();
-            System.out.println("✅ CSV Rows Loaded: " + weatherData.size());
+            System.out.println("CSV Rows Loaded: " + weatherData.size());
         } catch (Exception e) {
             e.printStackTrace();
         }

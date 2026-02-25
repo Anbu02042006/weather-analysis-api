@@ -27,5 +27,5 @@ public class WeatherData {
     private Double temperature;
     private Double humidity;
     private Double pressure;
-    private Double heatIndex;;
+    private Double heatIndex;
 }
